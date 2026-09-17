@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "AI Chat Hub - Side Panel Copilot",
+  "version": "0.1.0",
+  "description": "Multi-agent side panel & prompt copilot for DeepSeek, ChatGPT, Claude, and Gemini",
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "activeTab",
+    "tabs",
+    "scripting",
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://chat.deepseek.com/*",
+    "https://chatgpt.com/*",
+    "https://claude.ai/*",
+    "https://gemini.google.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Open AI Chat Hub Side Panel"
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.deepseek.com/*",
+        "https://chatgpt.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*"
+      ],
+      "js": ["src/content/index.ts"],
+      "run_at": "document_end"
+    }
+  ]
+}

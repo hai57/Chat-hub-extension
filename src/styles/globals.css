@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-dark-bg text-gray-200 antialiased font-sans select-none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom scrollbar for side panel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #181b24;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262a36;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4052;
+}
