@@ -46,6 +46,10 @@ export const SidePanel: React.FC = () => {
           else if (tab.url.includes('chatgpt.com') || tab.url.includes('chat.openai.com')) siteName = 'ChatGPT';
           else if (tab.url.includes('claude.ai')) siteName = 'Claude';
           else if (tab.url.includes('gemini.google.com')) siteName = 'Gemini';
+          else if (tab.url.includes('grok.com') || tab.url.includes('x.com/i/grok')) siteName = 'Grok';
+          else if (tab.url.includes('copilot.microsoft.com') || tab.url.includes('copilot.cloud.microsoft') || tab.url.includes('bing.com/chat')) siteName = 'Copilot';
+          else if (tab.url.includes('perplexity.ai')) siteName = 'Perplexity';
+          else if (tab.url.includes('chat.mistral.ai')) siteName = 'Mistral';
 
           const roles = await getTabRoles();
           const currentRole = roles[tab.id] || 'none';
